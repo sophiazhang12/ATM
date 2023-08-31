@@ -50,9 +50,16 @@ public class ATM
         throw new Exception ("Error: You are broke brother");
 
     }
-    public double withdrawMoney (String userID, double amount)
+    public double withdrawMoney (String userID, double amount) throws Exception
     {
-
+        //if amount exists, withdraw
+        if (atmMachine.get(userID) >= amount)
+        {
+            double originalMoney = atmMachine.get (userID); //balance before withdraw
+            atmMachine.put (userID, originalMoney - amount);
+            return amount;
+        }
+        throw new Exception ("Error: You are broke brother");
     }
     public boolean transferMoney (String fromAccount, String toAccount,double amount)
     {

@@ -12,6 +12,12 @@ public class ATMTester
         //bank.checkBalance ("n"); //should throw error; works
 
         bank.depositMoney ("newDude", 25);
-        bank.depositMoney ("n", 20); //throw error
+        System.out.println (bank.checkBalance ("newDude"));
+
+        //bank.depositMoney ("n", 20); //throw error, works
+
+        bank.withdrawMoney ("newDude", 30);
+        System.out.println (bank.checkBalance ("newDude")); //withdraw works
+        bank.withdrawMoney ("newDude", 100); //should throw error;
     }
 }
