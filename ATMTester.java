@@ -18,6 +18,12 @@ public class ATMTester
 
         bank.withdrawMoney ("newDude", 30);
         System.out.println (bank.checkBalance ("newDude")); //withdraw works
-        bank.withdrawMoney ("newDude", 100); //should throw error;
+        //bank.withdrawMoney ("newDude", 100); //should throw error; works
+
+        bank.openAccount ("twoDude", 120); //new entry in bank
+        System.out.println(bank.checkBalance ("twoDude"));
+        bank.transferMoney ("twoDude", "newDude", 5);
+        System.out.println(bank.checkBalance ("twoDude"));
+        System.out.println(bank.checkBalance ("newDude"));
     }
 }

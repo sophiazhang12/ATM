@@ -61,8 +61,15 @@ public class ATM
         }
         throw new Exception ("Error: You are broke brother");
     }
-    public boolean transferMoney (String fromAccount, String toAccount,double amount)
+    public boolean transferMoney (String fromAccount, String toAccount,double amount) throws Exception
     {
+        boolean works = false; //at the end of the method, will change to true. if returns false, then the rest of the method didn't run
+
+        withdrawMoney (fromAccount, amount);
+        depositMoney (toAccount, amount);
+        works = true;
+
+        return works;
 
     }
     public void audit ()
