@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 public class ATM
@@ -52,6 +54,12 @@ public class ATM
     }
     public double withdrawMoney (String userID, double amount) throws Exception
     {
+        //if userID does not exist, throw error
+        if (!atmMachine.containsKey (userID))
+        {
+            throw new Exception ("Error: No account found");
+        }
+
         //if amount exists, withdraw
         if (atmMachine.get(userID) >= amount)
         {
@@ -72,8 +80,10 @@ public class ATM
         return works;
 
     }
-    public void audit ()
+    public void audit () throws FileNotFoundException
     {
-
+        PrintWriter pw = new PrintWriter ("AccountAudit.txt");
+        pw.println (atmMachine.entrySet());
+        pw.close();
     }
 }

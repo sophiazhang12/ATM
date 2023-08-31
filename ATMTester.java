@@ -22,8 +22,10 @@ public class ATMTester
 
         bank.openAccount ("twoDude", 120); //new entry in bank
         System.out.println(bank.checkBalance ("twoDude"));
-        bank.transferMoney ("twoDude", "newDude", 5);
+        System.out.println (bank.transferMoney ("twoDude", "newDude", 5));
         System.out.println(bank.checkBalance ("twoDude"));
-        System.out.println(bank.checkBalance ("newDude"));
+        System.out.println(bank.checkBalance ("newDude")); //transfer works
+
+        bank.audit ();
     }
 }
