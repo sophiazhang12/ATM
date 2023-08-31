@@ -22,7 +22,14 @@ public class ATM
     }
     public void closeAccount (String userID)
     {
-
+        if (atmMachine.get (userID) > 0)
+        {
+            System.out.println ("Error: Please withdraw your money before closing your account.");
+        }
+        else
+        {
+            atmMachine.remove (userID);
+        }
     }
     public double checkBalance (String userID)
     {

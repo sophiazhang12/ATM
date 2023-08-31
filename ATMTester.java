@@ -4,6 +4,7 @@ public class ATMTester
     {
         ATM bank = new ATM ();
         bank.openAccount("newDude", 100);
-        bank.openAccount ("newDude", 10); //should throw error
+        bank.openAccount ("newDude", 10); //should throw error; works
+        bank.closeAccount ("newDude"); //should throw error
     }
 }
