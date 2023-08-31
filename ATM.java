@@ -33,7 +33,12 @@ public class ATM
     }
     public double checkBalance (String userID)
     {
-
+        if (atmMachine.containsKey (userID))
+        {
+            return atmMachine.get(userID);
+        }
+        System.out.println ("Error: Account does not exist");
+        return 0; //no account = no money ig?
     }
     public double depositMoney (String userID, double amount)
     {
