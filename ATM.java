@@ -82,8 +82,14 @@ public class ATM
     }
     public void audit () throws FileNotFoundException
     {
+        //it prints all the entires, but i can't figure how to make it print on new lines
         PrintWriter pw = new PrintWriter ("AccountAudit.txt");
-        pw.println (atmMachine.entrySet());
+
+        for (HashMap.Entry <String, Double> entry : atmMachine.entrySet ())
+            {
+                pw.println (entry.getKey () + " : " + entry.getValue ());
+            }
+
         pw.close();
     }
 }

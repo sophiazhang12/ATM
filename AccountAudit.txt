@@ -1,1 +1,2 @@
-[newDude=100.0, twoDude=115.0]
+newDude : 100.0
+twoDude : 115.0
